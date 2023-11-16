@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{flafter}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage[margin=0.5in]{geometry}
+\begin{document}
+\section*{Question 2}
+\lstinputlisting[language=matlab, caption={Code for question 2 calls BinarySearch.m.}]{q2.m}
+\lstinputlisting[language=matlab, caption={Code for Binary search called in q2.m.}]{BinarySearch.m}
+
+\section*{Question 3}
+\lstinputlisting[language=matlab, caption={Code used for question 3a.}]{../ForwardSubstitute.m}
+\lstinputlisting[language=matlab, caption={Code used for question 3d.}]{../BackwardSubstitute.m}\newpage
+\lstinputlisting[language=matlab, caption={Code used for question 3e.}]{../LUDecomposition.m}
+\lstinputlisting[language=matlab, caption={Code used for question 3f.}]{../LUSolve.m}
+
+\section*{Question 4}
+\lstinputlisting[language=matlab, caption={Code used for question 4c.}]{q4c.m}
+\lstinputlisting[language=matlab, caption={Code used for question 4e. It was run three times by uncommenting lines 3-6, 7-10, and 12-15 to produce the respective left and right subplots of Figure \ref{fig:4e} (The last two blocks produce identical plots).}]{q4e.m}
+
+\begin{figure*}[!htp]
+    \begin{center}
+        \includegraphics*[width=0.5\linewidth]{q4c.png}
+        \caption{Graph of solution to the ODE for question 4c.}
+    \end{center}
+\end{figure*}
+\begin{figure*}[!htp]
+    \begin{center}
+        \includegraphics*[width=0.49\linewidth]{q4e1.png}
+        \includegraphics*[width=0.49\linewidth]{q4e2.png}
+        \caption{Graph of solution to the respective ODEs for question 4e. The new  ODE given (the right subplot) presents much sharper transitions at $x = 0$ and $x = 1$.}
+        \label{fig:4e}
+    \end{center}
+\end{figure*}\newpage
+
+\section*{Question 5}
+\lstinputlisting[language=matlab, caption={Code used for question 5d.}]{../LeastSquaresQuadratic.m}
+\lstinputlisting[language=matlab, caption={Code used for question 5e.}]{q5e.m}
+\end{document}
