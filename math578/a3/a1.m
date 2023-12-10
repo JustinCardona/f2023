@@ -20,6 +20,8 @@ DXf = [
         (f(X0(1), X0(2), X0(3), X0(4), X0(5)+h/2) - f(X0(1), X0(2), X0(3), X0(4), X0(5)-h/2))/h;...
     ];
 DXf = double(DXf).';
+X0dot = zeros(5, 1);
+
 for k=1:steps
     [U, S, V] = svd(DXf);
     X0dotNew = V(:,5) / norm(V(:,5), 2);

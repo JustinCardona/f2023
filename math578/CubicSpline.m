@@ -1,10 +1,8 @@
-function [a, b, c, d] = CubicSpline(x, y, z)
+function [X, s] = CubicSpline(x, y, z)
     N = length(x);
     n = N - 1;
     h = (x(N) - x(1)) / n;
-    %A = diag(4 * ones(1, n-1)) + diag(ones(1,n-2), 1) + diag(ones(1, n-2), -1);
     A = diag(4 * ones(1, n+1)) + diag(ones(1,n), 1) + diag(ones(1, n), -1);
-    %for  i=1:n+1
     for  i=1:n-1
         u(i+1) = 3/h^2*(y(i+2)-2*y(i+1)+y(i));
     end
@@ -22,8 +20,8 @@ function [a, b, c, d] = CubicSpline(x, y, z)
     a(N) = y(N);
     b(1) = z(1);
     b(N) = z(2);
-    m = 10; %number of subsubintervals
-    h = h/m; %step size of subsubintervals
+    m = 10;
+    h = h/m;
     X=x(1):h:x(N);
     for i = 1:n
         for j = m*(i-1)+1:m*i

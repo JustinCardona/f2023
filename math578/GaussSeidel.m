@@ -1,4 +1,4 @@
-    function x = GaussSeidel(A, b, tol)
+function x = GaussSeidel(A, b, tol)
     E = -tril(A, -1);
     F = -triu(A, 1);
     D = diag(diag(A));
