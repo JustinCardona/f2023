@@ -15,6 +15,7 @@ end
 plot(linspace(0, M*L, M), x(:, 1))
 hold on
 plot(linspace(0, M*L, M), x(:, 2))
+legend('x_1', 'x_2')
 
 function a = coeff(x_init, N, L, mu)
     a = zeros(N, 2);
